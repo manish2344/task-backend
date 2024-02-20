@@ -6,8 +6,8 @@ const Feed = require("./models/Feed");
 
 mongoose
   .connect(
-    "mongodb+srv://manishjikumar:manishjikumar@cluster0.qq9pfe3.mongodb.net/mydbms",
-    {
+    'mongodb+srv://manishpanwar682:y11v9Z7fZrzTVovw@cluster0.sk5140k.mongodb.net/mydata',
+  {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
@@ -18,15 +18,14 @@ mongoose
     console.error("Failed to connect to mongo on startup - retrying in 5 sec");
   });
 
-// our localhost port
 const port = process.env.PORT || 3001;
 
 const app = express();
 
-// our server instance
+
 const server = http.createServer(app);
 
-// This creates our socket using the instance of the server
+
 const io = socketIO(server);
 
 io.on("connection", (socket) => {
